@@ -1,57 +1,34 @@
 
 $(document).ready(function(){
 
-
-
 	d3.csv('data/countries.csv',function(cError,countryData){
-		d3.csv('data/datasets.tsv',function(dataError,datasets){
-		console.log(datasets)
-		d3.tsv('data/carbon.tsv',function(carbonError,carbonData){
-		d3.tsv('data/employment.tsv',function(unemploymentError,unemploymentData){
-		d3.tsv('data/exportsAnnual.tsv',function(exportsAnnualError,exportsAnnualData){
-		d3.tsv('data/importsAnnual.tsv',function(importsAnnualError,importsAnnualData){
-		d3.tsv('data/reserves.tsv',function(reservesError,reservesData){
-		d3.tsv('data/laborForce.tsv',function(laborForceError,laborForceData){
-		d3.tsv('data/rural.tsv',function(ruralError,ruralData){
+		countryList.init(countryData);
 
-		d3.csv('data/fdi.csv',function(fdiError, fdiData){
-			d3.tsv('data/gdp.tsv',function(gdpError, gdpData){
-				d3.tsv('data/investment.tsv',function(investmentError, investmentData){
+		d3.tsv('data/datasets.tsv',function(dataError,datasets){
+		//Then set the aggregate function that'll loop through every dataset
+			function build(dataset,selector){
+				theData.init(dataset,selector);
+				theCharts.init(selector,"percent")
+			}
 
-					d3.tsv('data/pop.tsv',function(popError,popData){
-						//First, prep the scales for converting iso3 to everything else
-						countryList.init(countryData);
+			//And finally, call that aggregate dataset
 
-						//Then set the aggregate function that'll loop through every dataset
-						function build(dataset,selector){
-							theData.init(dataset,selector);
-							theCharts.init(selector,"percent")
-						}
+			datasets.forEach(function(dSet,i){
+				var thisFile = dSet.file.split('.');
 
-						//And finally, call that aggregate dataset
-						build(carbonData,"carbon");
-						build(ruralData,"rural");
-						build(gdpData,"gdp");
-						build(exportsAnnualData,"exportsAnnual");
-						build(importsAnnualData,"importsAnnual");
-						build(reservesData,"reserves");
-						build(laborForceData,"laborForce");
-						build(unemploymentData,"unemployment");
-						build(investmentData,"investment");
-						build(popData,"population");
+				if(thisFile[1]=="tsv"){
+					d3.tsv('data/' + dSet.file,function(error,data){
+						build(data,thisFile[0]);
 					})
-				})
+				} else {
+					d3.csv('data/' + dSet.file,function(error,data){
+						build(data,thisFile[0]);
+					})
+				}
 			})
 		})
-		})
-		})
-		})
-		})
-		})
-		})
-		})
-		})
 	})
+
 })
 
 var margin = {
@@ -489,7 +466,6 @@ var theCharts = {
 			dC.minX = specs[selector].percentX(thisMin)
 		})
 
-		console.log(theseContinents[2])
 		specs[selector].continents = theseContinents
 	},
 	key: function(selector){
