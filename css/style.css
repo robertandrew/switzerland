@@ -1,0 +1,77 @@
+/* - Narrow desktop view lg - */
+/* - iPad view md - */
+/* - Responsive view sm - */
+/* - Mobile view xs - */
+/* line 8, ../sass/style.scss */
+#charts .axis path {
+  fill: none;
+}
+/* line 11, ../sass/style.scss */
+#charts .axis line {
+  stroke-width: 1px;
+  stroke: black;
+}
+/* line 16, ../sass/style.scss */
+#charts .axis text {
+  font-weight: 100;
+  font-size: 60%;
+}
+/* line 36, ../sass/style.scss */
+#charts h4 {
+  color: darkgrey;
+  font-family: Bookman Old Style;
+}
+/* line 40, ../sass/style.scss */
+#charts .percentage rect {
+  fill: lightgrey;
+}
+/* line 43, ../sass/style.scss */
+#charts .percentage text {
+  fill: black;
+  font-size: 70%;
+  font-weight: 100;
+  text-anchor: end;
+}
+/* line 51, ../sass/style.scss */
+#charts .viz path {
+  opacity: 0.5;
+  stroke-width: 0;
+}
+/* line 54, ../sass/style.scss */
+#charts .viz path:hover {
+  opacity: 1;
+  stroke-width: 1;
+  stroke: white;
+}
+/* line 62, ../sass/style.scss */
+#charts .tooltip {
+  text-anchor: middle;
+  opacity: 1;
+  fill: black;
+  font-size: 80%;
+  font-weight: 100;
+}
+/* line 70, ../sass/style.scss */
+#charts .NorthAmerica {
+  fill: #bb2b77;
+}
+/* line 73, ../sass/style.scss */
+#charts .SouthAmerica {
+  fill: #ee3a43;
+}
+/* line 76, ../sass/style.scss */
+#charts .Europe {
+  fill: #e2e3e4;
+}
+/* line 79, ../sass/style.scss */
+#charts .Africa {
+  fill: #ffd63d;
+}
+/* line 82, ../sass/style.scss */
+#charts .Asia {
+  fill: #63bc51;
+}
+/* line 85, ../sass/style.scss */
+#charts .Australia {
+  fill: #0098db;
+}

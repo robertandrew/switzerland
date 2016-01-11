@@ -1,0 +1,12 @@
+file	label	source
+carbon.tsv	Carbon emissions	WB
+employment.tsv	Employed population	IMF
+exportsAnnual.tsv	Annual exports	IMF
+importsAnnual.tsv	Annual imports	IMF
+reserves.tsv	Foreign reserves, excluding gold	IMF
+laborForce.tsv	Labor force	IMF
+rural.tsv	Rural population	IMF
+fdi.csv	Foreign direct investment	WB
+gdp.tsv	GDP	WEO
+investment.tsv	Foreign direct investment	IMF
+pop.tsv	Population	WEO

@@ -1,0 +1,88 @@
+
+/* - Narrow desktop view lg - */
+/* - iPad view md - */
+/* - Responsive view sm - */
+/* - Mobile view xs - */
+#charts {
+	.axis {
+		path {
+		  fill:none;
+	  }
+		line {
+		   stroke-width: 1px;
+		   stroke: black;
+
+		}
+		text {
+			font-weight: 100;
+			font-size: 60%;
+		}
+	}
+
+	// svg {
+	// 	outline: 1px dashed grey;
+	// }
+	//
+	// div {
+	// 	outline: 3px solid yellow;
+	// 	div {
+	// 		outline: 2px solid pink;
+	// 		div {
+	// 			outline: 1px solid purple;
+	// 		}
+	// 	}
+	// }
+
+	h4 {
+		color:darkgrey;
+		font-family:Bookman Old Style;
+	}
+	.percentage rect {
+		fill:lightgrey;
+	}
+	.percentage text {
+		fill: black;
+		font-size: 70%;
+		font-weight: 100;
+		text-anchor:end;
+	}
+
+	.viz {
+		path {
+			opacity:0.5;
+			stroke-width:0;
+			&:hover {
+				opacity:1;
+				stroke-width:1;
+				stroke:white;
+			}
+		}
+	}
+
+	.tooltip {
+		text-anchor: middle;
+		opacity:1;
+		fill: black;
+		font-size:80%;
+		font-weight:100;
+	}
+
+	.NorthAmerica {
+		fill:#bb2b77
+	}
+	.SouthAmerica {
+		fill:#ee3a43
+	}
+	.Europe {
+		fill:#e2e3e4
+	}
+	.Africa {
+		fill:#ffd63d
+	}
+	.Asia {
+		fill:#63bc51
+	}
+	.Australia {
+		fill:#0098db
+	}
+}
